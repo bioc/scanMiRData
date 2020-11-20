@@ -1,0 +1,16 @@
+Package: scanMiRData
+Type: Package
+Title: miRNA Affinity models for the scanMiR package.
+Version: 0.99.1
+Date: 2020-11-19
+Authors@R: c(
+    person("Pierre-Luc", "Germain", email="pierre-luc.germain@hest.ethz.ch", role=c("cre","aut"), comment=c(ORCID="0000-0003-3418-4218")),
+    person("Michael", "Soutschek", email="michael.soutschek@hest.ethz.ch", role="ctb"),
+    person("Fridolin", "Gross", email="fridolin.gross@hest.ethz.ch", role="ctb"))
+Imports: scanMiR
+Suggests: knitr, rmarkdown
+Description: This package includes the 12mer-based affinity models of all mirbase mico-RNAs for human, mouse and rat.
+BiocType: ExperimentData
+License: GPL
+VignetteBuilder: knitr
+RoxygenNote: 7.1.1
