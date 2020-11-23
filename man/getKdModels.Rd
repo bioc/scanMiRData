@@ -4,16 +4,28 @@
 \alias{getKdModels}
 \title{getKdModels}
 \usage{
-getKdModels(species = c("hsa", "mmu", "rno"))
+getKdModels(
+  species = c("hsa", "mmu", "rno"),
+  categories = c("Poorly conserved", "Conserved across mammals",
+    "Conserved across vertebrates")
+)
 }
 \arguments{
 \item{species}{Either "hsa" (human), "mmu" (mouse) or "rno" (rat)}
+
+\item{categories}{The (mirbase) categories of miRNAs to return. Any 
+combination of "Low-confidence", "Poorly conserved", 
+"Conserved across mammals", "Conserved across vertebrates". If NULL, all
+categories are returned. miRNAs with NA as conservation are not returned
+unless `categories==NULL`.}
 }
 \value{
 An object of class \code{\link[scanMiR]{KdModelList}}
 }
 \description{
-Returns a collection of miRNA KdModels for the requested species.
+Returns a collection of miRNA KdModels for the requested species. 
+\underline{Note that by default, low-confidence miRNAs are not returned} 
+(see `categories`).
 }
 \examples{
 mods <- getKdModels("rno")
