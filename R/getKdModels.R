@@ -1,7 +1,7 @@
 #' getKdModels
 #'
 #' Returns a collection of miRNA KdModels for the requested species. 
-#' \underline{Note that by default, low-confidence miRNAs are not returned} 
+#' \emph{Note that by default, low-confidence miRNAs are not returned} 
 #' (see `categories`).
 #'
 #' @param species Either "hsa" (human), "mmu" (mouse) or "rno" (rat)
@@ -26,13 +26,13 @@ getKdModels <- function( species=c("hsa","mmu","rno"),
   if(!is.null(categories))
     categories <- match.arg(categories, cats, several.ok=TRUE)
   species <- match.arg(species)
-  mods <- get(data(species))
-  if(is.null(categories)) return(mods)
+  mods <- get(data(list=species, package="scanMiRData", envir = environment()))
+  if(is.null(categories)) return(KdModelList(mods))
   con <- conservation(mods)
   if(all(is.na(con))){
     warning("The collection has no conservation information; the `categories`",
             " argument will be ignored.")
     return(mods)
   }
-  mods[con %in% categories]
+  KdModelList(mods[con %in% categories])
 }
