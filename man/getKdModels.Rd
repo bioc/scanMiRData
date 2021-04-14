@@ -24,7 +24,7 @@ An object of class \code{\link[scanMiR]{KdModelList}}
 }
 \description{
 Returns a collection of miRNA KdModels for the requested species. 
-\underline{Note that by default, low-confidence miRNAs are not returned} 
+\emph{Note that by default, low-confidence miRNAs are not returned} 
 (see `categories`).
 }
 \examples{

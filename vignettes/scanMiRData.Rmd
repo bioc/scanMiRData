@@ -1,0 +1,61 @@
+---
+title: "scanMiRData"
+author: 
+- name: Pierre-Luc Germain
+  affiliation:
+    - D-HEST Institute for Neuroscience, ETH
+    - Lab of Statistical Bioinformatics, UZH
+- name: Michael Soutschek
+  affiliation: Lab of Systems Neuroscience, D-HEST Institute for Neuroscience, ETH
+- name: Fridolin Groß
+  affiliation: Lab of Systems Neuroscience, D-HEST Institute for Neuroscience, ETH
+package: scanMiR
+output:
+  BiocStyle::html_document
+abstract: |
+  Introduction to scanMiRData
+vignette: |
+  %\VignetteIndexEntry{scanMiRData}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include=FALSE}
+library(BiocStyle)
+```
+
+The `scanMiRData` package contains `KdModel` collections corresponding to all human, mouse and rat [mirbase](http:/mirbase.org/) miRNAs. These represent the miRNA binding affinities (or more exactly, dissociation rates) predicted using the CNN from [McGeary, Lin et al. (2019)](https://dx.doi.org/10.1126/science.aav1741). To know more about the `KdModel` and `KdModelList` classes, see the corresponding vignette in the `scanMiR` package.
+
+# Loading the collections
+
+The objects can be loaded to the environment using `data`:
+
+```{r}
+library(scanMiR)
+data("mmu", package="scanMiRData")
+summary(mmu)
+head(mmu)
+```
+
+Alternatively, they can also be loaded (and filtered) through a convenient function:
+
+```{r}
+library(scanMiRData)
+mmu <- getKdModels("mmu", categories=c("Conserved across vertebrates", 
+                                       "Conserved across mammals"))
+summary(mmu)
+```
+Summary of the other two collections:
+
+```{r}
+summary(getKdModels("hsa"))
+summary(getKdModels("rno"))
+```
+
+<br/><br/>
+
+# Session info {.unnumbered}
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```
