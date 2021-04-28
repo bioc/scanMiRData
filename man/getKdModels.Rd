@@ -4,20 +4,16 @@
 \alias{getKdModels}
 \title{getKdModels}
 \usage{
-getKdModels(
-  species = c("hsa", "mmu", "rno"),
-  categories = c("Poorly conserved", "Conserved across mammals",
-    "Conserved across vertebrates")
-)
+getKdModels(species = c("hsa", "mmu", "rno"), categories = NULL)
 }
 \arguments{
 \item{species}{Either "hsa" (human), "mmu" (mouse) or "rno" (rat)}
 
-\item{categories}{The (mirbase) categories of miRNAs to return. Any 
+\item{categories}{The categories of miRNAs to return. Any 
 combination of "Low-confidence", "Poorly conserved", 
-"Conserved across mammals", "Conserved across vertebrates". If NULL, all
-categories are returned. miRNAs with NA as conservation are not returned
-unless `categories==NULL`.}
+"Conserved across mammals", "Conserved across vertebrates". If NULL
+(default), all categories are returned. miRNAs with NA as 
+conservation are not returned  unless `categories==NULL`.}
 }
 \value{
 An object of class \code{\link[scanMiR]{KdModelList}}
