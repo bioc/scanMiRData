@@ -2,3 +2,4 @@
 
 export(getKdModels)
 import(scanMiR)
+importFrom(utils,data)

@@ -1,19 +1,20 @@
 #' getKdModels
 #'
-#' Returns a collection of miRNA KdModels for the requested species. 
-#' \emph{Note that by default, low-confidence miRNAs are not returned} 
+#' Returns a collection of miRNA KdModels for the requested species.
+#' \emph{Note that by default, low-confidence miRNAs are not returned}
 #' (see `categories`).
 #'
 #' @param species Either "hsa" (human), "mmu" (mouse) or "rno" (rat)
-#' @param categories The categories of miRNAs to return. Any 
-#' combination of "Low-confidence", "Poorly conserved", 
+#' @param categories The categories of miRNAs to return. Any
+#' combination of "Low-confidence", "Poorly conserved",
 #' "Conserved across mammals", "Conserved across vertebrates". If NULL
-#' (default), all categories are returned. miRNAs with NA as 
+#' (default), all categories are returned. miRNAs with NA as
 #' conservation are not returned  unless `categories==NULL`.
 #'
 #' @return An object of class \code{\link[scanMiR]{KdModelList}}
 #' @export
 #' @import scanMiR
+#' @importFrom utils data
 #' @examples
 #' mods <- getKdModels("rno")
 #' summary(mods)
