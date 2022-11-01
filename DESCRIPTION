@@ -1,7 +1,7 @@
 Package: scanMiRData
 Type: Package
 Title: miRNA Affinity models for the scanMiR package
-Version: 1.4.0
+Version: 1.5.0
 Depends: R (>= 4.0)
 Date: 2021-04-19
 Authors@R: c(
